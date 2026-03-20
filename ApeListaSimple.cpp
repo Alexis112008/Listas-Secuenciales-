@@ -106,7 +106,7 @@ public:
 
             // Si encuentra la canción
             if (aux->info == cancion) {
-                contador ++;
+                contador++;
             }
 
             // Avanza al siguiente nodo
