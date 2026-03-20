@@ -259,22 +259,27 @@ int main() {
 
     // Menú repetitivo
     do {
-        cout << "\n MENU PLAYLIST \n";
-        cout << "1. Agregar al inicio\n";
-        cout << "2. Agregar al final\n";
-        cout << "3. Buscar\n";
-        cout << "4. Eliminar\n";
-        cout << "5. Mostrar (Inicio -Fin)\n";
-        cout << "6. Mostrar (Fin -Inicio)\n";
-        cout << "7. Ver extremos\n";
-        cout << "8. Salir\n";
-        cout << "9. Contar canciones\n";
-        cout << "Opcion: ";
+    cout << "\n====================================\n";
+    cout << "      🎧 PLAYLIST DOBLE 🎧\n";
+    cout << "====================================\n";
+    cout << " 1) Agregar cancion al INICIO\n";
+    cout << " 2) Agregar cancion al FINAL\n";
+    cout << " 3) Buscar cancion\n";
+    cout << " 4) Eliminar cancion\n";
+    cout << "------------------------------------\n";
+    cout << " 5) Mostrar (Inicio → Fin)\n";
+    cout << " 6) Mostrar (Fin → Inicio)\n";
+    cout << " 7) Ver primera y ultima\n";
+    cout << "------------------------------------\n";
+    cout << " 8) Salir\n";
+    cout << " 9) Contar canciones\n";
+    cout << "====================================\n";
+    cout << "👉 Seleccione una opcion: ";
 
         cin >> opcion;
         cin.ignore(1000, '\n'); // Limpia buffer
 
-        if (opcion < 1 || opcion > 8) {
+        if (opcion < 1 || opcion > 9){
         cout << "Opcion fuera de rango.\n";
         }
 
@@ -284,24 +289,28 @@ int main() {
             cout << "Cancion: ";
             getline(cin, cancion);
             playlist.agregarInicio(cancion);
+            cout << "\n------------------------------------\n";
             break;
 
         case 2:
             cout << "Cancion: ";
             getline(cin, cancion);
             playlist.agregarFinal(cancion);
+            cout << "\n------------------------------------\n";
             break;
 
         case 3:
             cout << "Buscar: ";
             getline(cin, cancion);
             playlist.buscar(cancion);
+            cout << "\n------------------------------------\n";
             break;
 
         case 4:
             cout << "Eliminar: ";
             getline(cin, cancion);
             playlist.eliminar(cancion);
+            cout << "\n------------------------------------\n";
             break;
 
         case 5:
@@ -317,11 +326,11 @@ int main() {
             break;
 
         case 8:
-            cout << "Saliendo...\n";
+            cout << "\n👋 Saliendo del sistema... hasta luego!\n";
             break;
 
         default:
-            cout << "Opcion invalida.\n";
+            cout << "❌ Opcion invalida, intenta nuevamente.\n";
         }
 
     } while (opcion != 8);
