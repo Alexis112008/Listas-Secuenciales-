@@ -99,24 +99,25 @@ public:
         // Puntero auxiliar para recorrer la lista
         Nodo<T>* aux = primero;
 
-        int posicion = 1; // Contador de posición
+        int contador = 0; // Contador de posición
 
         // Recorre la lista mientras no llegue a NULL
         while (aux != nullptr) {
 
             // Si encuentra la canción
             if (aux->info == cancion) {
-                cout << " Cancion encontrada en la posicion " << posicion << ".\n";
-                return; // Termina la función
+                contador ++;
             }
 
             // Avanza al siguiente nodo
             aux = aux->siguiente;
-            posicion++;
+            
         }
-
+        if(contador > 0)
         // Si no se encontró
-        cout << " La cancion no existe en la playlist.\n";
+         cout << "La cancion aparece " << contador << " veces.\n";
+        else
+        cout << "La cancion no existe.\n";
     }
 
     // Eliminar canción
