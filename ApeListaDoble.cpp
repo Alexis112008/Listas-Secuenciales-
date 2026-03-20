@@ -30,6 +30,19 @@ public:
         ultimo = nullptr;
     }
 
+    //Funcion contar canciones
+    void contarCanciones() {
+    int contador = 0;
+    NodoDoble<T>* aux = primero;
+
+    while (aux != nullptr) {
+        contador++;
+        aux = aux->siguiente;
+        }
+
+    cout << "Total de canciones: " << contador << endl;
+    }
+
     // Agregar cancion al inicio
 
     void agregarInicio(T cancion) {
@@ -255,6 +268,7 @@ int main() {
         cout << "6. Mostrar (Fin -Inicio)\n";
         cout << "7. Ver extremos\n";
         cout << "8. Salir\n";
+        cout << "9. Contar canciones\n";
         cout << "Opcion: ";
 
         cin >> opcion;
