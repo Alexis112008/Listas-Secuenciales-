@@ -246,15 +246,18 @@ int main() {
     string cancion;
 
     do {
-        cout << "\n MENU PLAYLIST\n";
-        cout << "1. Agregar cancion al inicio\n";
-        cout << "2. Agregar cancion al final\n";
-        cout << "3. Buscar cancion\n";
-        cout << "4. Eliminar cancion\n";
-        cout << "5. Mostrar playlist\n";
-        cout << "6. Ver primera y ultima\n";
-        cout << "7. Salir\n";
-        cout << "Seleccione una opcion: ";
+        cout << "\n=============================\n";
+        cout << "      🎵 MENU PLAYLIST 🎵\n";
+        cout << "=============================\n";
+        cout << " 1) Agregar cancion al inicio\n";
+        cout << " 2) Agregar cancion al final\n";
+        cout << " 3) Buscar cancion\n";
+        cout << " 4) Eliminar cancion\n";
+        cout << " 5) Mostrar playlist\n";
+        cout << " 6) Ver primera y ultima\n";
+        cout << " 7) Salir\n";
+        cout << "-----------------------------\n";
+        cout << "👉 Seleccione una opcion: ";
 
         cin >> opcion;
 
@@ -267,24 +270,28 @@ int main() {
             cout << "Nombre de la cancion: ";
             getline(cin, cancion);
             playlist.agregarInicio(cancion);
+            cout << "\n-----------------------------\n";
             break;
 
         case 2:
             cout << "Nombre de la cancion: ";
             getline(cin, cancion);
             playlist.agregarFinal(cancion);
+            cout << "\n-----------------------------\n";
             break;
 
         case 3:
             cout << "Buscar cancion: ";
             getline(cin, cancion);
             playlist.buscar(cancion);
+            cout << "\n-----------------------------\n";
             break;
 
         case 4:
             cout << "Eliminar cancion: ";
             getline(cin, cancion);
             playlist.eliminar(cancion);
+            cout << "\n-----------------------------\n";
             break;
 
         case 5:
@@ -296,11 +303,11 @@ int main() {
             break;
 
         case 7:
-            cout << "Saliendo del programa...\n";
+            cout << "\n👋 Saliendo del sistema... hasta luego!\n";
             break;
 
         default:
-            cout << "Opcion invalida.\n";
+            cout << "❌ Opcion invalida, intenta de nuevo.\n";
         }
 
     } while (opcion != 7);
