@@ -7,7 +7,7 @@ using namespace std;
 
 template <typename T>
 struct NodoDoble {
-    T info;                        // Guarda la canción
+    T info;                        // Guarda la canciÃ³n
     NodoDoble<T>* siguiente;      // Apunta al siguiente nodo
     NodoDoble<T>* anterior;       // Apunta al nodo anterior
 };
@@ -19,13 +19,13 @@ class ListaDoble {
 
 private:
     NodoDoble<T>* primero;   // Apunta al primer nodo
-    NodoDoble<T>* ultimo;    // Apunta al último nodo
+    NodoDoble<T>* ultimo;    // Apunta al Ãºltimo nodo
 
 public:
     // inicializar lista
 
     void inicializar() {
-        // La lista inicia vacía
+        // La lista inicia vacÃ­a
         primero = nullptr;
         ultimo = nullptr;
     }
@@ -37,14 +37,14 @@ public:
         // Se crea un nuevo nodo
         NodoDoble<T>* nuevo = new NodoDoble<T>();
 
-        // Se asigna la canción
+        // Se asigna la canciÃ³n
         nuevo->info = cancion;
 
         // Inicialmente no tiene conexiones
         nuevo->siguiente = nullptr;
         nuevo->anterior = nullptr;
 
-        // Si la lista está vacía
+        // Si la lista estÃ¡ vacÃ­a
         if (primero == nullptr) {
             primero = nuevo;
             ultimo = nuevo;
@@ -52,7 +52,7 @@ public:
             // El nuevo nodo apunta al antiguo primero
             nuevo->siguiente = primero;
 
-            // El antiguo primero apunta hacia atrás al nuevo
+            // El antiguo primero apunta hacia atrÃ¡s al nuevo
             primero->anterior = nuevo;
 
             // Se actualiza el primero
@@ -71,25 +71,25 @@ public:
         nuevo->siguiente = nullptr;
         nuevo->anterior = nullptr;
 
-        // Si la lista está vacía
+        // Si la lista estÃ¡ vacÃ­a
         if (primero == nullptr) {
             primero = nuevo;
             ultimo = nuevo;
         } else {
-            // El último nodo apunta al nuevo
+            // El Ãºltimo nodo apunta al nuevo
             ultimo->siguiente = nuevo;
 
-            // El nuevo apunta hacia atrás al último
+            // El nuevo apunta hacia atrÃ¡s al Ãºltimo
             nuevo->anterior = ultimo;
 
-            // Se actualiza el último
+            // Se actualiza el Ãºltimo
             ultimo = nuevo;
         }
 
         cout << " \"" << cancion << "\" agregada al FINAL.\n";
     }
 
-    // Buscar canción
+    // Buscar canciÃ³n
 
     void buscar(T cancion) {
 
@@ -99,7 +99,7 @@ public:
         // Recorre toda la lista
         while (aux != nullptr) {
 
-            // Si encuentra la canción
+            // Si encuentra la canciÃ³n
             if (aux->info == cancion) {
                 cout << " Cancion encontrada en posicion " << posicion << ".\n";
                 return;
@@ -112,10 +112,10 @@ public:
         cout << " Cancion no encontrada.\n";
     }
 
-    // Eliminar canción
+    // Eliminar canciÃ³n
 
     void eliminar(T cancion) {
-        // Si la lista está vacía
+        // Si la lista estÃ¡ vacÃ­a
         if (primero == nullptr) {
             cout << " Playlist vacia.\n";
             return;
@@ -124,7 +124,7 @@ public:
         // Recorre la lista
         while (aux != nullptr) {
 
-            // Si encuentra la canción
+            // Si encuentra la canciÃ³n
             if (aux->info == cancion) {
 
                 // CASO 1: es el primer nodo
@@ -136,12 +136,12 @@ public:
                     else
                         ultimo = nullptr;
                 }
-                // CASO 2: es el último nodo
+                // CASO 2: es el Ãºltimo nodo
                 else if (aux == ultimo) {
                     ultimo = ultimo->anterior;
                     ultimo->siguiente = nullptr;
                 }
-                // CASO 3: está en medio
+                // CASO 3: estÃ¡ en medio
                 else {
                     aux->anterior->siguiente = aux->siguiente;
                     aux->siguiente->anterior = aux->anterior;
@@ -162,7 +162,7 @@ public:
 
     void mostrarInicioFin() {
 
-        // Verifica si está vacía
+        // Verifica si estÃ¡ vacÃ­a
         if (primero == nullptr) {
             cout << " Playlist vacia.\n";
             return;
@@ -191,7 +191,7 @@ public:
 
     void mostrarFinInicio() {
 
-        // Verifica si está vacía
+        // Verifica si estÃ¡ vacÃ­a
         if (ultimo == nullptr) {
             cout << " Playlist vacia.\n";
             return;
@@ -201,7 +201,7 @@ public:
 
         cout << "\nTAIL -> ";
 
-        // Recorre hacia atrás
+        // Recorre hacia atrÃ¡s
         while (aux != nullptr) {
 
             cout << "[" << aux->info << "]";
@@ -217,7 +217,7 @@ public:
     }
 
 
-    // Mostrar primera y ultima canción
+    // Mostrar primera y ultima canciÃ³n
 
     void extremos() {
 
@@ -231,7 +231,7 @@ public:
     }
 };
 
-// Función principal
+// FunciÃ³n principal
 
 int main() {
 
@@ -244,7 +244,7 @@ int main() {
     int opcion;
     string cancion;
 
-    // Menú repetitivo
+    // MenÃº repetitivo
     do {
         cout << "\n MENU PLAYLIST \n";
         cout << "1. Agregar al inicio\n";
@@ -259,6 +259,10 @@ int main() {
 
         cin >> opcion;
         cin.ignore(1000, '\n'); // Limpia buffer
+
+        if (opcion < 1 || opcion > 8) {
+        cout << "Opcion fuera de rango.\n";
+        }
 
         switch (opcion) {
 
