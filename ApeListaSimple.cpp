@@ -113,11 +113,13 @@ public:
             aux = aux->siguiente;
             
         }
-        if(contador > 0)
+        
+        if(contador > 0){
         // Si no se encontró
          cout << "La cancion aparece " << contador << " veces.\n";
-        else
+        }else{
         cout << "La cancion no existe.\n";
+        }
     }
 
     // Eliminar canción
