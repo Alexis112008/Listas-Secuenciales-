@@ -246,9 +246,8 @@ int main() {
     string cancion;
 
     do {
-        cout << "\n=============================\n";
-        cout << "      🎵 MENU PLAYLIST 🎵\n";
-        cout << "=============================\n";
+        
+        cout << "       MENU PLAYLIST \n";
         cout << " 1) Agregar cancion al inicio\n";
         cout << " 2) Agregar cancion al final\n";
         cout << " 3) Buscar cancion\n";
@@ -257,7 +256,7 @@ int main() {
         cout << " 6) Ver primera y ultima\n";
         cout << " 7) Salir\n";
         cout << "-----------------------------\n";
-        cout << "👉 Seleccione una opcion: ";
+        cout << " Seleccione una opcion: ";
 
         cin >> opcion;
 
@@ -270,28 +269,28 @@ int main() {
             cout << "Nombre de la cancion: ";
             getline(cin, cancion);
             playlist.agregarInicio(cancion);
-            cout << "\n-----------------------------\n";
+            cout << "";
             break;
 
         case 2:
             cout << "Nombre de la cancion: ";
             getline(cin, cancion);
             playlist.agregarFinal(cancion);
-            cout << "\n-----------------------------\n";
+            cout << "";
             break;
 
         case 3:
             cout << "Buscar cancion: ";
             getline(cin, cancion);
             playlist.buscar(cancion);
-            cout << "\n-----------------------------\n";
+            cout << "";
             break;
 
         case 4:
             cout << "Eliminar cancion: ";
             getline(cin, cancion);
             playlist.eliminar(cancion);
-            cout << "\n-----------------------------\n";
+            cout << "";
             break;
 
         case 5:
@@ -303,11 +302,11 @@ int main() {
             break;
 
         case 7:
-            cout << "\n👋 Saliendo del sistema... hasta luego!\n";
+            cout << "\n Saliendo del sistema... hasta luego!\n";
             break;
 
         default:
-            cout << "❌ Opcion invalida, intenta de nuevo.\n";
+            cout << " Opcion invalida, intenta de nuevo.\n";
         }
 
     } while (opcion != 7);
