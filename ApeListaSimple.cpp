@@ -30,7 +30,7 @@ public:
     }
 
 
-    // agregar canción al inicio
+    // agregar canción al inicio de la playlist
 
     void agregarInicio(T cancion) {
 
@@ -63,7 +63,7 @@ public:
     }
 
 
-    // Agregar canción al final
+    // Agregar canción al final de la playlist
 
     void agregarFinal(T cancion) {
 
@@ -182,7 +182,7 @@ public:
     }
 
 
-    // Mostrar la playlist
+    // Mostrar la playlist con todas las canciones
 
     void mostrar() {
 
